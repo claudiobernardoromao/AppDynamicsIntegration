@@ -17,6 +17,8 @@ add to C:\ProgramData\AppDynamics\DotNetAgent\Config\config.xml as a child of th
 appdynamics.config, a new file in the app
 <<>>
 
+create Custom Property APM Application Name \ Applies to Applications\ Allow custom value \ visible+editable by developers
+
 manifest of apprenda app - WCF config
     <services>
 	  <service name="TimeCard.Service">

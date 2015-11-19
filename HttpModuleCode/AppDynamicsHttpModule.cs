@@ -17,12 +17,13 @@ namespace AppDynamics
 
         public void Init(HttpApplication app)
         {
-            string currentDir = Path.GetDirectoryName(Assembly.GetExecutingAssembly().CodeBase);
-            string appdynamicsConfigFile = Directory.GetParent(currentDir).FullName;
-            string[] configFiles = Directory.GetFiles(appdynamicsConfigFile, "AppDynamics.config", SearchOption.TopDirectoryOnly);
+            //string currentDir = Path.GetDirectoryName(Assembly.GetExecutingAssembly().CodeBase); // not used because it returns path in UNC-format
+            //string appdynamicsConfigFile = Directory.GetParent(currentDir).FullName;
+            string appdynamicsConfigDir = AppDomain.CurrentDomain.BaseDirectory;
+            string[] configFiles = Directory.GetFiles(appdynamicsConfigDir, "AppDynamics.config", SearchOption.TopDirectoryOnly);
             if (configFiles.Length != 1)
             {
-                throw new Exception("Failed to find the AppDynamics.config file at " + appdynamicsConfigFile);
+                throw new Exception("Failed to find the AppDynamics.config file at " + appdynamicsConfigDir);
             }
 
             XmlDocument xmlDoc = new XmlDocument();
@@ -30,7 +31,7 @@ namespace AppDynamics
             XmlNode appsettingsNode = xmlDoc.SelectSingleNode("//appSettings");
             if (null == appsettingsNode)
             {
-                throw new Exception("Failed to find the appSettings node in AppDynamics.config file at " + appdynamicsConfigFile);
+                throw new Exception("Failed to find the appSettings node in AppDynamics.config file at " + appdynamicsConfigDir);
             }
 
             XmlElement appNameElement = (XmlElement)xmlDoc.SelectSingleNode("//appSettings/add[@key = 'APPDYNAMICS_AGENT_APPLICATION_NAME']");
@@ -38,7 +39,7 @@ namespace AppDynamics
 
             if (null == appNameElement || null == tierNameElement)
             {
-                throw new Exception("Failed to find the AppDynamics elements in node in web.config file at " + appdynamicsConfigFile);
+                throw new Exception("Failed to find the AppDynamics elements in node in AppDynamics.config file at " + appdynamicsConfigDir);
             }
 
             this.AppDynamicsName = appNameElement.Attributes["value"].Value;
@@ -52,7 +53,7 @@ namespace AppDynamics
         }
 
         private void OnBeginRequest(object sender, EventArgs e)
-        {                        
+        {          
             Environment.SetEnvironmentVariable("APPDYNAMICS_AGENT_APPLICATION_NAME", this.AppDynamicsName, EnvironmentVariableTarget.Process);
             Environment.SetEnvironmentVariable("APPDYNAMICS_AGENT_TIER_NAME", this.AppDynamicsTier, EnvironmentVariableTarget.Process);
         }
