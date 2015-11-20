@@ -6,9 +6,9 @@ This contains the bootstrap policy code and the relevant artifacts needed to ena
 - Custom Property "APM Application Name" exists on each Apprenda Application. Each application that wants to enable APM should fill in that custom property. The custom property should apply to Applications, Allows a custom value, and is visible and editable by developers.
 - AppDynamics .NET Agent is installed with full instrumentation capabilities for IIS and non-IIS .NET applications on every Apprenda platform node that can host applications. The global AppDynamics config file should enable the instrumentation of all IIS application pools.
 - Modify the C:\ProgramData\AppDynamics\DotNetAgent\Config\config.xml to add the following XML so that AppDynamics can monitor the Apprenda WCF self-hosted executable. Add the XML as a child of the <app-agents> node
-    <standalone-applications>
-        <standalone-application executable="Apprenda.WCFServiceHost.exe"><tier name="Web Services"/></standalone-application>
-    </standalone-applications>
+>    <standalone-applications>
+>        <standalone-application executable="Apprenda.WCFServiceHost.exe"><tier name="Web Services"/></standalone-application>
+>    </standalone-applications>
 
 <h2>Additional Information</h2>
 Enhancing Apprenda applications to work with your standardized corporate-wide APM tool is simple through the power of Apprenda extensibility and bootstrap policies. To learn more about bootstrap policies, visit the following links:
