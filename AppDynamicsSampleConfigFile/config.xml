@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<appdynamics-agent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <controller host="apprenda.saas.appdynamics.com" port="443" ssl="true">
+    <application name="ApprendaApps" />
+    <account name="apprenda" password="2ac04bbf8ea9" />
+  </controller>
+  <machine-agent>
+  </machine-agent>
+  <app-agents>
+    <profiler>
+      <filters>
+        <filter text="System.Net.LazyAsyncResult.Complete" filter-on-type="Function" filter-match-type="match" />
+	<filter text="Apprenda.Core.Logging.VersionLogOverrideMonitor" filter-on-type="Function" filter-match-type="startswith" />
+   	<filter text="StackExchange.Redis.ConnectionMultiplexer" filter-on-type="Function" filter-match-type="startswith" />
+      </filters>                                                 
+    </profiler>
+    <IIS>
+      <automatic />
+    </IIS>
+    <standalone-applications>
+      <standalone-application executable="Apprenda.WCFServiceHost.exe"> <tier name="Web Services" /></standalone-application>
+    </standalone-applications>
+  </app-agents>
+</appdynamics-agent>

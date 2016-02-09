@@ -26,6 +26,8 @@ To get a better understanding of this integration, view the following videos tha
 - BootstrapperCode contains the code for the Apprenda Bootstrap policy. The bootstrap policy installs the HTTP module for IIS based workloads and creates the necessary web.config properties. For example the following line is added to web.config under the ```\\system.webserver\modules``` node
   - ```<add name="AppDynamicsHttpModule" type="AppDynamics.AppDynamicsHttpModule, AppDynamicsHttpModule" />```
 - BootstrapperBinariesandFolderStructure contains the individual files and the ZIP file that can be uploaded to Apprenda to create the bootstrap policy (BSP). The operator has full freedom to create the proper triggers for the BSP. In my example, I used logic that keyed off the Custom Property "APM Application Name"
-- SampleApprendaApplication contained a sample 3-tier .NET Application that can be uploaded on Apprenda to show off the APM capabilities of AppDynamics. 
+- SampleApprendaApplication contains a sample 3-tier .NET Application that can be uploaded on Apprenda to show off the APM capabilities of AppDynamics. 
   - This application has defined in the manifest two Environment Variables that AppDynamics and the BSP require. 
   - The application manifest also defines the Custom Property "APM Application Name".
+- AppDynamicsSampleConfigFile contains a sample AppDynamics config.xml file that you can set up on each Apprenda node.
+  - Make sure that once you install the AppDynamics agent and set up the config.xml, it would be highly recommended to reboot the windows node
