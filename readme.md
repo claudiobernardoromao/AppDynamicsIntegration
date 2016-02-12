@@ -39,8 +39,8 @@ Open the AppDynamicsInstallationGuideForApprenda.docx file for a step-by-step in
 Application Bootstrap Policies (BSP) on the Apprenda Platform allow Platform Operators to set specific rules governing inclusion of specified libraries with the deployment of .Net UI, WCF/Windows Services, and Java Web Application components. These policies apply comparison logic set by the Platform Operator to match specified libraries to the desired application components. The ability to add and extend the functionality of guest applications through policy is one of the greatest and most powerful features of Apprenda.
 
 Enhancing Apprenda applications to work with your standardized corporate-wide deployment of AppDynamics is simple through the power of Apprenda extensibility and bootstrap policies. To learn more about bootstrap policies, visit the following links:
-- http://docs.apprenda.com/5-5/bootstrap-policies
-- http://docs.apprenda.com/5-5/custom-bootstrapper
+- http://docs.apprenda.com/6-5/bootstrap-policies
+- http://docs.apprenda.com/6-5/custom-bootstrapper
 - http://apprenda.com/blog/customize-paas-application-bootstrap-policies/
 
 To get a better understanding of this integration through a step-by-step video turorial, visit the following link:
