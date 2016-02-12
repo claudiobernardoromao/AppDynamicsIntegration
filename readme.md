@@ -43,8 +43,9 @@ Enhancing Apprenda applications to work with your standardized corporate-wide de
 - http://docs.apprenda.com/6-5/custom-bootstrapper
 - http://apprenda.com/blog/customize-paas-application-bootstrap-policies/
 
-To get a better understanding of this integration through a step-by-step video turorial, visit the following link:
+To get a better understanding of this integration through a step-by-step video turorial, visit one of the two following links:
 - https://apprenda.wistia.com/medias/ck8afudkk1
+- https://www.youtube.com/watch?v=kKTsi5qsWSs
 
 <h2>Repository Contents</h2>
 This GitHub repository contains the bootstrap policy code and the relevant artifacts needed to light up APM from AppDynamics for Apprenda Applications
