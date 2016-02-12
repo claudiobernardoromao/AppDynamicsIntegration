@@ -1,4 +1,5 @@
-﻿using Apprenda.API.Extension.Bootstrapping;
+﻿// Copyright (c) 2016 Apprenda Inc.
+using Apprenda.API.Extension.Bootstrapping;
 using Apprenda.API.Extension.CustomProperties;
 using System;
 using System.IO;

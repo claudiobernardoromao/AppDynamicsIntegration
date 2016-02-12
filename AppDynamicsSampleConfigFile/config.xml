@@ -2,7 +2,7 @@
 <appdynamics-agent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <controller host="apprenda.saas.appdynamics.com" port="443" ssl="true">
     <application name="ApprendaApps" />
-    <account name="apprenda" password="2ac04bbf8ea9" />
+    <account name="apprenda" password="<insert appropriate password>" />
   </controller>
   <machine-agent>
   </machine-agent>
